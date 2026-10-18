@@ -111,40 +111,6 @@ transform .16s cubic-bezier(.2,.8,.2,1)}
 <div class="flash" id="flash"></div>
 </div>
 
-<script>
-const SETTINGS = {
-  // اكتبي أسئلتك وأجوبتك هون:
-  questions: [
-    { question: "Do You Love me?", yes: "YES", no: "NO" },
-    { question: "هل انتي رح ضلي هيك بنفس العقلية للابد؟", yes: "Yes", no: "No" },
-    { question: "ليش هيك بتعملي طيب؟", yes: "لانو هاي طبيعتي", no: "لاني مغصوبه هالاشي" }
-  ],
-  holdAfterAnswerMs: 1000
-};
-
-const stage = document.getElementById("stage");
-const card = document.getElementById("card");
-const title = card.querySelector(".title");
-const noBtn = document.getElementById("noBtn");
-const yesBtn = document.getElementById("yesBtn");
-const success = document.getElementById("success");
-const flash = document.getElementById("flash");
-
-let questionIndex = 0;
-let answers = [];
-let attempts = 0;
-let finished = false;
-let answerLocked = false;
-
-function escapeHtml(v){
-  return String(v)
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
-}
-
 function renderQuestion(){
   const q = SETTINGS.questions[questionIndex];
 
